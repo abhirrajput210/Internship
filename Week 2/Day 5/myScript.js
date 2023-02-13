@@ -189,32 +189,84 @@
 // ---------- Async Iterables ----------
 
 
-let range = {
-    from : 1,
-    to : 10,
+// let range = {
+//     from : 1,
+//     to : 10,
     
     
-    [Symbol.asyncIterator](){
-        return {
-            current : this.from,
-            last : this.to,
+//     [Symbol.asyncIterator](){
+//         return {
+//             current : this.from,
+//             last : this.to,
     
-            async next(){
-                await new Promise(resolve => setTimeout(resolve,2000));
-                if (this.current <= this.last){
-                    return{done : false, value : this.current++};
-                }
-                else{
-                    return{done :true};
-                }
-            }
-        };
+//             async next(){
+//                 await new Promise(resolve => setTimeout(resolve,2000));
+//                 if (this.current <= this.last){
+//                     return{done : false, value : this.current++};
+//                 }
+//                 else{
+//                     return{done :true};
+//                 }
+//             }
+//         };
+//     }
+// };
+
+// (async() => {
+// for await (let values of range){
+//     console.log(values);
+// }
+// })()
+
+
+// ------------ Proxy And Reflect Example -----------
+
+// let target = [];
+// let proxy = new Proxy(target,{});
+
+// proxy.test =5;
+// console.log(proxy.test);
+// console.log(target.test);
+
+// for(let key in proxy){
+//     console.log(key);
+// }
+
+
+// ---------- Proxy With Getter Methods ----------
+// let numbers = [1,2,3];
+
+// numbers = new Proxy(numbers,{
+//     get(target,prop){
+//         if(prop in target){
+//             return target[prop];
+//         }
+//         else{
+//             return 0;
+//         }
+//     }
+// });
+
+// console.log(numbers[1]);
+// console.log(numbers[2]);
+// console.log(numbers[10]);
+
+
+// ---------- Proxy With Set Method --------------
+
+let numbers = [];
+
+numbers  = new Proxy(numbers,{
+    set(target,prop,val){
+        if(typeof val == 'number'){
+            target[prop] = val;
+            return true;
+        }else{
+            return false;
+        }
     }
-};
+});
 
-(async() => {
-for await (let values of range){
-    console.log(values);
-}
-})()
-
+numbers.push(10);
+numbers.push(20);
+// numbers.push("Test");
