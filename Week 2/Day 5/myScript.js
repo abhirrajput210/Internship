@@ -74,7 +74,7 @@ let range = {
 
 *[Symbol.iterator](){
     for(let value=this.from; value <= this.to ; value++){
-        yield value;
+        yield value;        //sample 
     }    
 }
 
