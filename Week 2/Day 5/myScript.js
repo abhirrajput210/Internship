@@ -1,10 +1,10 @@
-function* generatorSequence(){
-    yield 1;
-    yield 2;
-    yield 3;
-    // return 4;
-    yield 4;
-}
+// function* generatorSequence(){
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//     // return 4;
+//     yield 4;
+// }
 
 // let generator = generatorSequence();
 
@@ -67,17 +67,45 @@ function* generatorSequence(){
 // ----------- Shorthand Of Using Generators For Iterables ----------
 
 
-let range = {
-    from : 1,
-    to : 10,
+// let range = {
+//     from : 1,
+//     to : 10,
 
 
-*[Symbol.iterator](){
-    for(let value=this.from; value <= this.to ; value++){
-        yield value;        //sample 
-    }    
+// *[Symbol.iterator](){
+//     for(let value=this.from; value <= this.to ; value++){
+//         yield value;       
+//     }    
+// }
+
+// };
+
+// console.log([...range]);
+
+
+// ----------- Generator Compositions ------------
+
+function* generatorSequence(start,end){
+    for(let value=start; value<=end; value++){
+        yield value;
+    }
 }
 
-};
 
-console.log([...range]);
+function* generatePassCode(){
+    // 0..9
+    yield* generatorSequence(48,57);
+
+    //A..Z
+    yield* generatorSequence(65,90);
+
+    //a..z
+    yield* generatorSequence(97,122);
+}
+
+let str = '';
+for(let code of generatePassCode()){
+    str += String.fromCharCode(code);
+}
+
+console.log(str);
