@@ -1,0 +1,142 @@
+.rcorner1{
+    border-radius: 20px;
+    color: black;
+    background: green; 
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+
+.rcorner2{
+    border: 4px solid blue;
+    border-radius: 20px;
+    color: black;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+.rcorner3{
+    border-radius: 20px;
+    background: url(image-qr-code.png) no-repeat;
+    background-size: contain;
+    background-position: left top;
+    background-repeat: repeat;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+}
+
+.borderimage{
+    border: 20px solid transparent;
+    /* border-image: url(border.png) 30 round; */
+    border-image: url(border.png) 30% round;
+    padding: 20px;
+
+}
+
+.exm1{
+    /* background-color: rgba(0, 0, 255, 0.6); */
+    background-color: hsl(240, 100%, 50%);
+}
+
+/* div{
+    border: 2px solid red;
+} */
+
+span{
+    border: inherit;
+}
+
+#grad1{
+    height: 150px;
+    width: 200px;
+    /* background-image: linear-gradient(to bottom right,  red,yellow); */
+    /* background-image: linear-gradient(180deg,  red,yellow); */
+    /* background-image: linear-gradient(to right, red,green,blue); */
+    /* background-image: repeating-linear-gradient(rgba(255,0,0,1),rgba(255,0,0,0)); */
+    /* background-image: radial-gradient(red 5%,green 15%,blue 60%); */
+    /* background-image: repeating-radial-gradient(circle, red,green,blue); */
+    /* background-image: repeating-radial-gradient(red,green 10%,blue 15%); */
+    /* background-image: conic-gradient(red 0deg,red 90deg,green 90deg,green 180deg, blue 180deg, blue 270deg,yellow 270deg); */
+    background-image: repeating-conic-gradient(red,green 10%,blue 20%);
+    border-radius: 50%;
+}
+/* 
+h1{
+    text-shadow: 2px 2px 5px red;
+} */
+
+h1{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.bs1{
+    width: 300px;
+    height: 100px;
+    box-shadow: 10px 10px 5px ;
+    background-color: black;
+    color: red;
+    padding: 20px;
+}
+
+p.text1{
+    white-space: nowrap;
+    width: 200px;
+    border: 1px solid red;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+}
+
+p.text2{
+    white-space: nowrap;
+    width: 200px;
+    border: 1px solid red;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.text2:hover{
+    overflow: visible;
+}
+
+p.text3{
+    width: 200px;
+    border: 1px solid red;
+    word-wrap: break-word;
+}
+
+p.text4{
+    width: 140px;
+    border: 1px solid red;
+    word-break: keep-all;
+}
+
+p.text5{
+    width: 140px;
+    border: 1px solid red;
+    word-break: break-all;
+    writing-mode: horizontal-tb;
+}
+
+.text6
+    /* writing-mode: horizontal-tb; */
+    /* writing-mode: vertical-rl; */
+    writing-mode: vertical-lr;
+}
+
+/* div{
+    width: 300px;
+    height: 100px;
+    background-color: blueviolet;
+    border: 1px solid black;
+    transform: 50px 200px; 
+} */
+
+/* div#myDiv{
+    transform: rotate(30deg);
+} */
+
+

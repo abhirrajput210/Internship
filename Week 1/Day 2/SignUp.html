@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User SignUp</title>
+    </head>
+
+    <body>
+        <div style="background-color: rgb(201, 197, 197); color: black; align-self: center; width: 25%; margin: auto; border-radius: 20px;">
+        <center>
+            <h2>Student SignUp</h2>
+        </center>
+            <form style="margin-left: 20px;" autocomplete="on">
+                <table>
+                    <tr>
+                      <td>First Name : </td>
+                      <td><input type="text" name="fname" size="20"/></td>
+                    </tr>
+                    <tr>
+                      <td>Last Name : </td>
+                      <td><input type="text" name="lname" size="20"/></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number : </td>
+                        <td><input type="tel" name="mnum" size="20"/></td>
+                    </tr>
+                    <tr>
+                        <td>Email : </td>
+                        <td><input type="email" name="email" size="20"></td>
+                    </tr>
+                    <tr>
+                        <td>Birth Date:</td>
+                        <td><input type="date" name="date"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender :</td>
+                        <td><select id="gender" name="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option></td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom: 130px;">Address :</td>
+                        <td><textarea name="address" rows="10" cols="21"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom: 40px;">Blood Group : </td>
+                        <td><input type="radio" name="bg" value="A+">A+<br>
+                            <input type="radio" name="bg" value="B+">B+<br>
+                            <input type="radio" name="bg" value="O+">O+<br></td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom: 40px;">Select Language :</td>
+                        <td><input type="checkbox" value="Hindi">Hindi<br>
+                            <input type="checkbox" value="English">English<br>
+                            <input type="checkbox" value="Gujarati">Gujarati</td>
+                    </tr>
+
+                    <tr>
+                        <td><button type="submit" value="Submit" onclick="alert('Submitted Successfully')">Submit</td>
+                        <td><button type="reset" value="Reset">Reset</button></td>
+                    </tr>
+                  </table>
+            </form>
+        
+    </div>
+    </body>
+
+    
+</html>

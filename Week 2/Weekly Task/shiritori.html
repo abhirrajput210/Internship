@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Shiritori Game</title>
+    </head>
+
+    <body>
+        <script>
+            class Shiritori {
+	
+	constructor(){
+		this.words = [];
+		this.game_over = false
+	}
+	
+	play(str){
+		if(this.words.length != 0){
+			let lastWord = this.words[this.words.length-1]
+			if(this.words.includes(str)){
+				this.game_over = true;
+			}
+			
+			if(str[0] == this.lastWord[this.lastword.length-1]){
+				this.words.push(str);
+				return(this.words);
+			}
+			else{
+				this.game_over = true;
+			}
+		}
+		
+		else{
+			this.words.push(str);
+			return(this.words);
+		}
+	}
+	
+	restart(){
+		this.words = [];
+		this.game_over = false;	
+	}
+}
+        </script>
+    </body>
+</html>

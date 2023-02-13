@@ -1,0 +1,35 @@
+/* p{
+    text-align: center;
+    color: black;
+} */
+/* 
+table{
+    border: 1px solid;
+} */
+
+
+table,td{
+    /* border-collapse: collapse; */
+    width: 100%;
+    border: 1px solid;
+    text-align: center;
+}
+
+th{
+    border: 1px solid;
+    height: 70px;
+    text-align: center;
+    vertical-align: top;
+    padding: 15px;
+}
+/* 
+tr:hover{
+    background-color: blue;
+} */
+/* 
+tr:nth-child(even){
+    background-color: blue;
+} */
+th{
+    background-color: green;
+}
