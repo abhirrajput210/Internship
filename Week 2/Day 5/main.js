@@ -1,4 +1,4 @@
-// import {sayHi} from './sayHi.js';
+import {sayHi} from './sayHi.js';
 
-// console.log(sayHi);
-// sayHi("Abhishek");
+console.log(sayHi);
+sayHi("Abhishek");

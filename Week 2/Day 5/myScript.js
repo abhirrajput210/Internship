@@ -254,19 +254,114 @@
 
 // ---------- Proxy With Set Method --------------
 
-let numbers = [];
+// let numbers = [];
 
-numbers  = new Proxy(numbers,{
-    set(target,prop,val){
-        if(typeof val == 'number'){
-            target[prop] = val;
-            return true;
-        }else{
-            return false;
+// numbers  = new Proxy(numbers,{
+//     set(target,prop,val){
+//         if(typeof val == 'number'){
+//             target[prop] = val;
+//             return true;
+//         }else{
+//             return false;
+//         }
+//     }
+// });
+
+// console.log(numbers.push(10));
+// console.log(numbers.push(20));
+// // numbers.push("Test");
+
+// ----------- OwnKeys And GetOwnPropertyDescriptor ----------
+
+// let user = {
+//     name : "Abhishek",
+//     age : 20,
+// };
+
+// let userOne = new Proxy(user,{
+//     ownKeys(target){
+//         return Object.keys(target);
+//     }
+// });
+
+// for(let keys in userOne){
+//     console.log(keys);
+// }
+
+// console.log(Object.keys(userOne));
+// console.log(Object.values(userOne));
+
+
+// let user = {};
+
+// let userOne = new Proxy(user,{
+//     ownKeys(target){
+//         return ['a','b','c'];
+//     },
+
+//     getOwnPropertyDescriptor(target,prop){
+//         return{
+//             enumerable : true,
+//             configurable :true
+//         };
+//     }
+// });
+
+// for(let keys in userOne){
+//     console.log(keys);
+// }
+
+// console.log(Object.keys(userOne));
+// console.log(Object.values(userOne));
+
+
+// ---------- Range With Hash Trap ----------
+
+// let numbers = {
+//     start : 1,
+//     end : 10
+// };
+
+// let range =  new Proxy(numbers,{
+//     has(target,prop){
+//         return prop >= target.start && prop <= target.end;
+//     }
+// });
+
+// console.log(5 in range);
+// console.log(8 in range);
+// console.log(50 in range);
+
+
+// ---------- Reflect Object ----------
+
+// let user = {
+//     name : "Abhishek",
+//     age : 20,
+// };
+
+// console.log(Reflect.ownKeys(user));
+// console.log(Reflect.get(user,'name'));
+// console.log(Reflect.set(user,'name',"Abhi"));;
+// console.log(Reflect.get(user,'name'));
+// console.log(Reflect.has(user,'name'));
+// console.log(Reflect.deleteProperty(user,"name"));
+// console.log(Reflect.has(user,'name'));
+
+// ---------- eval Example ----------
+
+// let ans = 'console.log("Abhishek")';
+// eval(ans);
+
+
+//---------- Currying Example ----------
+
+function sum(x){
+    return (y) =>{
+        return (z) =>{
+            return x + y + z; 
         }
     }
-});
+}
 
-numbers.push(10);
-numbers.push(20);
-// numbers.push("Test");
+console.log(sum(1)(2)(3));
