@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <title>Week 2 : Day 6</title>
         <!-- <script>
             console.log("From Head" + document.body);
         </script> -->
+        
     </head>
 
     <body>
@@ -80,7 +82,7 @@
 
         </script> -->
 
-        <div id="elem1"></div>
+        <!-- <div id="elem1"></div>
         <div id="elem2"></div>
 
         <script>
@@ -88,7 +90,140 @@
 
             elem1.innerHTML = name;
             elem2.textContent = name;
+        </script> -->
+<!-- 
+        // ---------- HTML Attributes ---------- -->
+        
+        <!-- 
+        <body something="Not Defined "">
+            <script>
+                console.log(document.body.getAttribute("something"));
+            </script>
+        </body> -->
+<!-- 
+        // Extended Example Of Working With HTML Attributes -->
+<!-- 
+        <div id="elem" about="Abhi"></div>
+        
+        <script>
+            console.log(elem.getAttribute("about"));
+
+            elem.setAttribute("Age",123);
+
+            console.log(elem.innerHTML);
+
+            console.log(elem.outerHTML);
+
+            for(let res of elem.attributes){
+                console.log(`${res.name} = ${res.value}`);
+            }
+        </script> -->
+<!-- 
+        // ---------- Event Listener Example ------------ -->
+        
+        <!-- <input type ="button" onclick="countRabbits()"  value="Count Rabbits">
+
+        <script>
+
+            function countRabbits(){
+                for(let i=1;i<=3;i++){
+                    console.log("Rabbit Count" + i);
+                }
+            }
+
+        </script> -->
+<!-- 
+        ---------- Event Listener Example ---------- -->
+
+        <!-- <input id = "btn" type ="button" value="Click Me">
+
+        <script>
+
+            function handler1(){
+                    console.log("Good Evening");
+            };
+
+            function handler2(){
+                console.log("Thanks");
+            }
+
+            // btn.onclick = () => console.log("Hello");
+            btn.addEventListener("Click",handler1);
+            btn.addEventListener("Click",handler2);
+
+        </script> -->
+
+        <!-- <input type="button" value="Click Me" id="btn">
+        <script>
+            btn.onclick = function(event){
+                console.log(event.type + "At" + event.currentTarget);
+                console.log("Coordinates" + event.clientX + ":" + event.clientY);
+            };
+        </script> -->
+<!-- 
+        <form onclick="console.log('form')">FORM
+            <div onclick="console.log('div')">DIV
+              <p onclick="console.log('p')">P</p>
+            </div>
+        </form> -->
+
+
+        <!-- ---------- Event Delegation Example---------- -->
+<!-- 
+        <ul id="myList">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <script>
+            let myList = document.getElementById("myList");
+            myList.addEventListener("click",function(e){
+                let target = e.target;  
+                if(target.matches("li")){
+                    target.style.backgroundColor = "red";
+                }
+            });
+
+            
+            let newLi = document.createElement("li");
+            newLi.textContent = "4";
+            myList.appendChild(newLi);
+        </script> -->
+<!-- 
+        ---------- Preventing Browser's Default Action ------------>
+
+        <!-- <a href="/" onclick="return false">Click Here </a> -->
+        <!-- <a href="/" onclick="event.preventDefault()"> CLick here </a> -->
+
+
+        <!-- ---------- Event Delegation ---------- -->
+        <!-- <div id="grandparent" style="width: 200px; height: 200px; border: 2px solid red;"> Grand Parent
+            <div id="parent" style="width: 150px; height: 150px; border: 2px solid blue;">Parent
+                <div id="child" style="width: 100px; height: 100px; border: 2px solid green;">Child</div> 
+            </div>
+        </div>
+
+        <script src="myScript.js"></script> -->
+
+        <!-- -------------- event.defaultPrevented Example ------------- -->
+
+        <p>Right Click Here For Document Context Menu</p>
+        <button id="btn">Right Click Here For Button Context Menu</button>
+
+        <script>
+            btn.oncontextmenu = function(event){
+                event.preventDefault();
+                console.log("Button Context Menu");  
+            };
+
+            document.oncontextmenu = function(event){
+                event.preventDefault();
+                console.log("Document Context Menu");
+            };
         </script>
+
+
 
     </body>
 </html>
