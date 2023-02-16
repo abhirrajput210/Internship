@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <script src="myScript.js"></script>
+        <!-- <script src="myScript.js"></script> -->
              
     <!--    -------------- Wrong Document Pitfall ----------- -->
     <!-- <iframe src="/" id="iframe"></iframe>
@@ -35,7 +35,54 @@
 
     <!-- </script> -->
 
+    <!-- -------------- File Example -------------- -->
+ 
+        <!--<input type="file" onchange="showFile(this)">
 
+        <script>
+
+            function showFile(input){
+                let file = input.files[0];
+
+                console.log(`File Name : ${file.name}`);
+                console.log(`Last Modified : ${file.lastModified}`);
+            }
+
+        </script> -->
+
+    <!-- -------------- FileReader Example --------------            -->
+ 
+    <!--<input type="file" onchange="readFile(this)">
+
+    <script>
+        function readFile(input){
+            let file = input.files[0];
+
+            let reader = new FileReader();
+
+            reader.readAsText(file);
+
+            reader.onload = function(){
+                console.log(reader.result);
+            }
+
+            reader.onerror = function(){
+                console.log(reader.error);
+            }
+        }
+    </script> -->
+
+    <!-- -------------- Fetch Example -------------- -->
+
+    <script>
+        let response = await fetch("https://javascript.info/");
+        if(response.ok){
+            let json = await response.json();
+        }
+        else{
+            console.log("HTTP Error :" + response.status);
+        }
+    </script>
 
     </body>
 </html>
