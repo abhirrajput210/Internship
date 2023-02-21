@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <title>User Details</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="table-responsive">
+
+                <table id="myTable" class="table styled-table">
+                    <thead>
+                        <tr>
+                            <th hidden>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Image</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userData">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="updatePop" class="updatePop">
+            <center>
+            <form id="formData">
+                <input id="id" type="text" name="id" hidden>
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" ><br>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname" ><br><br>
+                <input type="button" value="Update" id="submitbtn">
+            </form> 
+        </center>
+        <script src="myScript.js"></script>
+    </body>
+</html>
