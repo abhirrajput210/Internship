@@ -8,9 +8,29 @@
     </head>
 
     <body>
+
+        <div class="container">
+        <div class="findSection" id="searchUser">
+            <center>
+            <form id="SearchFormData">
+                <input id="sid" type="text" name="id" hidden>
+                <label for="searchField">Select Field</label><br>
+                <select name="sfield" id="sfield">
+                    <option value="none" selected disabled hidden>Select The Field</option>
+                    <option value="First Name">First Name</option>
+                    <option value="Last Name">Last Name</option>
+                </select><br><br>
+                
+                <label for="text">Enter The Text</label><br>
+                <input type="text" id="text" name="text" ><br><br>
+                <input type="button" value="Search" id="searchbtn">
+            </form> 
+        </center>
+        </div>
+    </div>
+
         <div class="container">
             <div class="table-responsive">
-
                 <table id="myTable" class="table styled-table">
                     <thead>
                         <tr>
@@ -44,6 +64,7 @@
                 <input type="button" value="Update" id="submitbtn">
             </form> 
         </center>
+        </div>
         <script src="myScript.js"></script>
     </body>
 </html>

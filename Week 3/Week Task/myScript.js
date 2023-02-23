@@ -13,7 +13,7 @@ fetch('https://dummyjson.com/users')
         userData += `<tr>
         <td hidden>${values.id}</td>
         <td id="fn[${index}]">${values.firstName}</td>
-        <td id="ln[${index}]">${values.lastName}</tdd=>
+        <td id="ln[${index}]">${values.lastName}</td>
         <td>${values.email}</td>
         <td>${values.age}</td>
         <td><img width="50" height="50" src="${values.image}"/></td>
@@ -70,18 +70,48 @@ function productUpdate(btn) {
             })
             })
             .then(res => res.json())
-            .then(console.log);
-            // console.log(document.getElementById(`fn[${uid}]`));
-            // document.getElementById(`fn[${uid-1}]`).innerText = updatedFirstName;
-            // document.getElementById(`ln[${uid-1}]`).innerText = updatedLastName;
-            // // .then(console.log);  
-            // var x = document.getElementById("updatePop");
-            // if (x.style.display !== "none") {
-            //     x.style.display = "none";
-            // }
-
+            // .then(console.log);
+            console.log(document.getElementById(`fn[${uid}]`));
+            document.getElementById(`fn[${uid-1}]`).innerText = updatedFirstName;
+            document.getElementById(`ln[${uid-1}]`).innerText = updatedLastName;
+            // .then(console.log);  
+            var x = document.getElementById("updatePop");
+            if (x.style.display !== "none") {
+                x.style.display = "none";
+            }
         }
 }
+
+
+let fb = document.getElementById("searchbtn");
+fb.onclick = function(){
+
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("text");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    var cn = document.getElementById("sfield").value;
+    var ci = document.getElementById("sfield").selectedIndex;
+    for (var i = 0; i < tr.length; i++) {
+    var tds = tr[i].getElementsByTagName("td");
+    var flag = false;
+    for(var j = 0; j < tds.length; j++){
+      var td = tds[ci];
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        flag = true;
+      } 
+    }
+    if(flag){
+        tr[i].style.display = "";
+    }
+    else {
+        tr[i].style.display = "none";
+    }
+  }
+}
+
+
 
       
 
