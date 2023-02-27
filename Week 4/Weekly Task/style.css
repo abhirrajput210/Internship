@@ -1,0 +1,64 @@
+body{
+    font-size: 1.25rem;
+    background-color: hsl(212, 45%, 89%);
+    margin: 50px;
+}
+
+.styled-table {
+    border: 2px solid white;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table td{
+    border: 2px solid white;    
+}
+
+
+.styled-table th{
+    border: 2px solid white;    
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+.updatePop{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:12em;
+    display: none;
+    margin-top: -15em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.searchSection{
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:12em;
+    display: none;
+    margin-top: -15em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.findSection{
+    background-color: hsl(212, 82%, 67%); 
+    height: 270px; 
+    width: 300px; 
+    margin-left: 20em; 
+    border-radius: 20px; 
+    padding-top: 20px;
+}

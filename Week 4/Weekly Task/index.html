@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <title>Sports News</title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            body{
+    font-size: 1.25rem;
+    background-color: hsl(212, 45%, 89%);
+    margin: 50px;
+}
+
+.styled-table {
+    border: 2px solid white;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table td{
+    border: 2px solid white;    
+}
+
+
+.styled-table th{
+    border: 2px solid white;    
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+.updatePop{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:12em;
+    display: none;
+    margin-top: -15em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.searchSection{
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:12em;
+    display: none;
+    margin-top: -15em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.findSection{
+    background-color: hsl(212, 82%, 67%); 
+    height: 270px; 
+    width: 300px; 
+    margin-left: 20em; 
+    border-radius: 20px; 
+    padding-top: 20px;
+}
+        </style>
+
+
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="table-responsive">
+                <table id="myTable" class="table styled-table">
+                    <thead>
+                        <tr>
+                            <th hidden>Id</th>
+                            <th>Author</th>
+                            <th>Content</th>
+                            <th>Date</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userData">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            
+            fetch('https://inshortsapi.vercel.app/news?category=sports')
+.then((data) =>{
+    return data.json();
+}).then((objectData) =>{
+    console.log(objectData);
+    const objectArray = objectData.data;
+    console.log(Array.isArray(objectArray));
+    let userData = "";
+    // Object.keys(objectArray);
+    objectArray.map((values, index) =>{
+        console.log(values);
+        console.log(index);
+        userData += `<tr>
+        <td hidden>${values.id}</td>
+        <td id="fn[${index}]">${values.author}</td>
+        <td id="ln[${index}]">${values.content}</td>
+        <td>${values.date}</td>
+        <td><img width="50" height="50" src="${values.imageUrl}"/></td>
+        <td>${values.title}</td>
+    </tr>` 
+    });
+    document.getElementById("userData").innerHTML=userData;    
+})  
+        </script>
+    </body>
+</html>
