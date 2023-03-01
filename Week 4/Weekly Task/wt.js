@@ -45,7 +45,7 @@ axios.get(apiUrl)
   
       .styled-table thead tr {
         background-color: #009879;
-        color: black;
+        color: black  ;
         text-align: left;
       }
     
