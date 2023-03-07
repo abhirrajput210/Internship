@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.task-list {
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <div class="task-list">
+      <h2>Employee Tasks</h2>
+      <ul id="today-tasks"></ul>
+      <form action="todo" method="post">
+        <center>
+        <input type="text" name="title" placeholder="Add a new task title" id="new-task"><br><br>
+        <input type="text" name="des" placeholder="Add a new task description" id="new-task"><br><br>
+        <label>Select Date:</label>
+        <input type="date" name="dt" placeholder="Enter A Date"><br><br>
+        <label>Select If Task Is Completed: </label>
+        <input type="checkbox"><br><br>
+        <input type="submit" id="add-task-btn" value="Add Task"></input>
+        <input type="submit" id="update-task-btn" value="Update Task"></input>
+        <input type="submit" id="delete-task-btn" value="Delete Task"></input>
+      </center>
+      </form>
+    </div>
+
+  </body>
+</html>
+
+
+
